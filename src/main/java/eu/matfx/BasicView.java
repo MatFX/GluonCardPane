@@ -14,10 +14,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
 public class BasicView extends View {
 
@@ -35,6 +33,7 @@ public class BasicView extends View {
 		    private final GroupItem groupitem;
             {
             	groupitem = new GroupItem();
+ 
             }
          
             
@@ -99,14 +98,15 @@ public class BasicView extends View {
         
 
 		//Die Variante geht nicht weil der Listener bereits aufgerufen wird wenn noch nichts auf der Oberfläche sichtbar ist.
+		//The variant with repaintView after shown view doesn't work, because the newValue is true before the view is displayed on screen. 
 		this.showingProperty().addListener(new ChangeListener<Boolean>() {
 
 			@Override
 			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
 				
-				
 				System.out.println("showing property oldValue " + oldValue + " newValue " + newValue);
-				repaintView();
+				if(newValue)
+					repaintView();
 				
 			}
 			
