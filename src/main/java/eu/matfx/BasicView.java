@@ -118,7 +118,7 @@ public class BasicView extends View {
 				
 				
 				System.out.println("showing property oldValue " + oldValue + " newValue " + newValue);
-				//repaintView();
+				repaintView();
 				
 			}
 			
