@@ -97,17 +97,20 @@ public class BasicView extends View {
 		
 		setBottom(hBoxButton);
         
-		/* TODO raus geht nicht
-		this.onShownProperty().addListener(new ChangeListener<EventHandler<LifecycleEvent>>() {
+
+		//The variant with repaintView after shown view doesn't work, because the newValue is true before the view is displayed on screen. 
+		this.showingProperty().addListener(new ChangeListener<Boolean>() {
 
 			@Override
-			public void changed(ObservableValue<? extends EventHandler<LifecycleEvent>> observable,
-					EventHandler<LifecycleEvent> oldValue, EventHandler<LifecycleEvent> newValue) {
-				System.out.println("on shown " + oldValue.toString()+ " newValue " + newValue.toString());
+			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+				
+				System.out.println("showing property oldValue " + oldValue + " newValue " + newValue);
+				//if(newValue)
+				//	repaintView();
 				
 			}
 			
-		});*/
+		});
 		
 		this.setOnShown(new EventHandler<LifecycleEvent>() {
 
@@ -124,19 +127,6 @@ public class BasicView extends View {
 			
 		});
 
-		//The variant with repaintView after shown view doesn't work, because the newValue is true before the view is displayed on screen. 
-		this.showingProperty().addListener(new ChangeListener<Boolean>() {
-
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				
-				System.out.println("showing property oldValue " + oldValue + " newValue " + newValue);
-				//if(newValue)
-				//	repaintView();
-				
-			}
-			
-		});
 		
 	}
 
