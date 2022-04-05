@@ -42,11 +42,8 @@ public class BasicView extends View {
             	//super.updateItem(iVisibleItem, empty);
             	if (iVisibleItem != null && !empty) 
                 {
-            		//if(iVisibleItem instanceof GroupViewObject)
-            		//{
-            			groupitem.setIVisible(iVisibleItem);
-            			setGraphic(groupitem);
-            		//}
+            		groupitem.setIVisible(iVisibleItem);
+            		setGraphic(groupitem);
             		this.setStyle("-fx-background-color: #00000000");
                     
             	} 
@@ -62,15 +59,6 @@ public class BasicView extends View {
 			
 		});
     	
-    	/* TODO raus
-        Label label = new Label("Hello JavaFX World!");
-
-        Button button = new Button("Change the World!");
-        button.setGraphic(new Icon(MaterialDesignIcon.LANGUAGE));
-        button.setOnAction(e -> label.setText("Hello JavaFX Universe!"));
-        */
-        VBox controls = new VBox(15.0, cardPane);
-        controls.setAlignment(Pos.TOP_CENTER);
         
         setCenter(cardPane);
         
@@ -106,10 +94,7 @@ public class BasicView extends View {
 		
 		setBottom(hBoxButton);
         
-		//this.onShownProperty()
-        
-       // repaintView();
-	
+
 		//Die Variante geht nicht weil der Listener bereits aufgerufen wird wenn noch nichts auf der Oberfläche sichtbar ist.
 		this.showingProperty().addListener(new ChangeListener<Boolean>() {
 
@@ -141,23 +126,23 @@ public class BasicView extends View {
 			{
 				List<GroupViewObject> groupViewObjectList = new ArrayList<GroupViewObject>();
 				
-				groupViewObjectList.add(new GroupViewObject(1, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(2, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(3, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(4, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(5, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(6, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(7, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(8, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(9, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(10, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(11, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(12, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(13, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(14, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(15, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(16, "Gruppe"));
-				groupViewObjectList.add(new GroupViewObject(17, "Gruppe"));
+				groupViewObjectList.add(new GroupViewObject(1, "Group"));
+				groupViewObjectList.add(new GroupViewObject(2, "Group"));
+				groupViewObjectList.add(new GroupViewObject(3, "Group"));
+				groupViewObjectList.add(new GroupViewObject(4, "Group"));
+				groupViewObjectList.add(new GroupViewObject(5, "Group"));
+				groupViewObjectList.add(new GroupViewObject(6, "Group"));
+				groupViewObjectList.add(new GroupViewObject(7, "Group"));
+				groupViewObjectList.add(new GroupViewObject(8, "Group"));
+				groupViewObjectList.add(new GroupViewObject(9, "Group"));
+				groupViewObjectList.add(new GroupViewObject(10, "Group"));
+				groupViewObjectList.add(new GroupViewObject(11, "Group"));
+				groupViewObjectList.add(new GroupViewObject(12, "Group"));
+				groupViewObjectList.add(new GroupViewObject(13, "Group"));
+				groupViewObjectList.add(new GroupViewObject(14, "Group"));
+				groupViewObjectList.add(new GroupViewObject(15, "Group"));
+				groupViewObjectList.add(new GroupViewObject(16, "Group"));
+				groupViewObjectList.add(new GroupViewObject(17, "Group"));
 				
 				
 				for(int i = 0; i < groupViewObjectList.size(); i++)
