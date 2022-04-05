@@ -6,6 +6,7 @@ import java.util.List;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.CardCell;
 import com.gluonhq.charm.glisten.control.CardPane;
+import com.gluonhq.charm.glisten.control.LifecycleEvent;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 
@@ -96,8 +97,33 @@ public class BasicView extends View {
 		
 		setBottom(hBoxButton);
         
+		/* TODO raus geht nicht
+		this.onShownProperty().addListener(new ChangeListener<EventHandler<LifecycleEvent>>() {
 
-		//Die Variante geht nicht weil der Listener bereits aufgerufen wird wenn noch nichts auf der Oberfläche sichtbar ist.
+			@Override
+			public void changed(ObservableValue<? extends EventHandler<LifecycleEvent>> observable,
+					EventHandler<LifecycleEvent> oldValue, EventHandler<LifecycleEvent> newValue) {
+				System.out.println("on shown " + oldValue.toString()+ " newValue " + newValue.toString());
+				
+			}
+			
+		});*/
+		
+		this.setOnShown(new EventHandler<LifecycleEvent>() {
+
+			@Override
+			public void handle(LifecycleEvent event) {
+				
+				//this works; the first item at the card pane in the visible area is group 1 
+				if(event.getEventType() == LifecycleEvent.SHOWN)
+				{
+					System.out.println("onShown SHOWN");
+					repaintView();
+				}
+			}
+			
+		});
+
 		//The variant with repaintView after shown view doesn't work, because the newValue is true before the view is displayed on screen. 
 		this.showingProperty().addListener(new ChangeListener<Boolean>() {
 
@@ -105,13 +131,14 @@ public class BasicView extends View {
 			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
 				
 				System.out.println("showing property oldValue " + oldValue + " newValue " + newValue);
-				if(newValue)
-					repaintView();
+				//if(newValue)
+				//	repaintView();
 				
 			}
 			
 		});
-    }
+		
+	}
 
     @Override
     protected void updateAppBar(AppBar appBar) {
