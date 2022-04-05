@@ -12,9 +12,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <javafx.version>17.0.0.1</javafx.version>
-        <attach.version>4.0.12</attach.version>
-        <gluonfx.plugin.version>1.0.8</gluonfx.plugin.version>
-        <javafx.plugin.version>0.0.7</javafx.plugin.version>
+        <attach.version>4.0.13</attach.version>
+        <gluonfx.plugin.version>1.0.12</gluonfx.plugin.version>
+        <javafx.plugin.version>0.0.8</javafx.plugin.version>
         <mainClassName>eu.matfx.GluonCardPane</mainClassName>
     </properties>
 
@@ -61,6 +61,11 @@
             <id>Gluon</id>
             <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
         </repository>
+
+     <repository>
+            <id>Maven</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository> 
     </repositories>
 
     <build>
