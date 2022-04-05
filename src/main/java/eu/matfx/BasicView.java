@@ -27,6 +27,9 @@ public class BasicView extends View {
         
     	
     	cardPane = new CardPane<>();
+    	//without cell factory and using the toString from GroupViewObject, it's the same problem. 
+    	//The displayable view starts with group 5 and the user cannot scroll up to group 1.
+    	//The user must scroll to the end of the list view and than it's possible to scroll to group 1.
     	cardPane.setCellFactory(p -> new CardCell<IVisible>() 
 		{
 		    private final GroupItem groupitem;
@@ -143,12 +146,41 @@ public class BasicView extends View {
 				groupViewObjectList.add(new GroupViewObject(15, "Group"));
 				groupViewObjectList.add(new GroupViewObject(16, "Group"));
 				groupViewObjectList.add(new GroupViewObject(17, "Group"));
+				groupViewObjectList.add(new GroupViewObject(18, "Group"));
+				groupViewObjectList.add(new GroupViewObject(19, "Group"));
+				groupViewObjectList.add(new GroupViewObject(20, "Group"));
+				groupViewObjectList.add(new GroupViewObject(21, "Group"));
+				groupViewObjectList.add(new GroupViewObject(22, "Group"));
+				groupViewObjectList.add(new GroupViewObject(23, "Group"));
+				groupViewObjectList.add(new GroupViewObject(24, "Group"));
+				groupViewObjectList.add(new GroupViewObject(25, "Group"));
+				groupViewObjectList.add(new GroupViewObject(26, "Group"));
+				groupViewObjectList.add(new GroupViewObject(27, "Group"));
+				groupViewObjectList.add(new GroupViewObject(28, "Group"));
+				groupViewObjectList.add(new GroupViewObject(29, "Group"));
+				groupViewObjectList.add(new GroupViewObject(30, "Group"));
+				groupViewObjectList.add(new GroupViewObject(31, "Group"));
+				groupViewObjectList.add(new GroupViewObject(32, "Group"));
+				groupViewObjectList.add(new GroupViewObject(33, "Group"));
+				groupViewObjectList.add(new GroupViewObject(34, "Group"));
+				groupViewObjectList.add(new GroupViewObject(35, "Group"));
+				groupViewObjectList.add(new GroupViewObject(36, "Group"));
+				groupViewObjectList.add(new GroupViewObject(37, "Group"));
+				groupViewObjectList.add(new GroupViewObject(38, "Group"));
+				groupViewObjectList.add(new GroupViewObject(39, "Group"));
+				groupViewObjectList.add(new GroupViewObject(40, "Group"));
+				groupViewObjectList.add(new GroupViewObject(41, "Group"));
 				
 				
+				cardPane.getItems().addAll(groupViewObjectList);
+				
+				/*
 				for(int i = 0; i < groupViewObjectList.size(); i++)
 				{
 					cardPane.getItems().add(groupViewObjectList.get(i));
-				}
+				}*/
+				
+				
 				
 			}
 		

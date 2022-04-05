@@ -25,6 +25,11 @@ public class GroupViewObject implements IVisible
 	public String getDescriptionText() {
 		return description + " " + groupNumber;
 	}
+	
+	public String toString()
+	{
+		return description + " " + groupNumber;
+	}
 
 
 }
