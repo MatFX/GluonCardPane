@@ -10,6 +10,7 @@ import com.gluonhq.charm.glisten.control.LifecycleEvent;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -91,7 +92,22 @@ public class BasicView extends View {
 			}
 			
 		});
-		hBoxButton.getChildren().addAll(repaintButton, clearButton);
+		Button closeAppButton = new Button("Close");
+		closeAppButton.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) 
+			{
+				System.out.println("platform exit aufruf");
+				//funktioniert nicht Irgendwie schießt er die App nicht richtig ab
+				//Platform.exit()
+				System.exit(0);
+				
+			}
+			
+		});
+		
+		hBoxButton.getChildren().addAll(repaintButton, clearButton, closeAppButton);
 		
 		
 		
