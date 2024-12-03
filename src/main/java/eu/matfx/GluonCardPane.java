@@ -1,5 +1,6 @@
 package eu.matfx;
 
+
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.visual.Swatch;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class GluonCardPane extends MobileApplication {
     @Override
     public void postInit(Scene scene) {
         Swatch.BLUE.assignTo(scene);
+        scene.getStylesheets().add(GluonCardPane.class.getResource("/style.css").toExternalForm());
 
         ((Stage) scene.getWindow()).getIcons().add(new Image(GluonCardPane.class.getResourceAsStream("/icon.png")));
     }
