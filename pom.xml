@@ -8,15 +8,16 @@
     <packaging>jar</packaging>
     <name>GluonCardPane</name>
 
-    <properties>
+      <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
-        <javafx.version>17.0.0.1</javafx.version>
-        <attach.version>4.0.13</attach.version>
-        <gluonfx.plugin.version>1.0.12</gluonfx.plugin.version>
+        <maven.compiler.release>21</maven.compiler.release>
+        <javafx.version>24-ea+5</javafx.version>
+        <attach.version>4.0.21</attach.version>
+        <gluonfx.plugin.version>1.0.24</gluonfx.plugin.version>
         <javafx.plugin.version>0.0.8</javafx.plugin.version>
         <mainClassName>eu.matfx.GluonCardPane</mainClassName>
     </properties>
+
 
     <dependencies>
         <dependency>
@@ -27,7 +28,8 @@
         <dependency>
             <groupId>com.gluonhq</groupId>
             <artifactId>charm-glisten</artifactId>
-            <version>6.1.0</version>
+           <!--   <version>6.1.0</version> -->
+            <version>6.2.3</version> 
         </dependency>
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
